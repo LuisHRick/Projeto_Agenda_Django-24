@@ -8,10 +8,10 @@
 
         <p><b>ID:</b> {{ contact.id }}</p>
         <p><b>E-mail:</b> {{ contact.email }}</p>
-        <p><b>Phone:</b> {{ contact.phone }}</p>
-        <p><b>Created date:</b> {{ contact.created_date }}</p>
-        <p><b>Description:</b> {{ contact.description }}</p>
-        <p><b>Category:</b> {{ contact.category.name }}</p>
+        <p><b>Telefone:</b> {{ contact.phone }}</p>
+        <p><b>Data de crição:</b> {{ contact.created_date }}</p>
+        <p><b>Descrição:</b> {{ contact.description }}</p>
+        <p><b>Categoria:</b> {{ contact.category.name }}</p>
 
         {% if contact.picture %}
             <p>
@@ -21,7 +21,7 @@
 
         {% if request.user == contact.owner %}
             <div class="contact-links">
-                <a class='btn btn-link' href="{% url 'contact:update' contact.id %}">Update</a>
+                <a class='btn btn-link' href="{% url 'contact:update' contact.id %}">Atualizar</a>
                 
                 <form action="{% url 'contact:delete' contact.id %}" method="POST">
                     {% csrf_token %}

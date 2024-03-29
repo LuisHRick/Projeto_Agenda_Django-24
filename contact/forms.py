@@ -13,7 +13,8 @@ class ContactForms(forms.ModelForm):
                 'accept': 'image/*',
             }
         ),
-        required=False
+        required=False,
+        label='Foto'
     )
 
     first_name = forms.CharField(
@@ -55,6 +56,15 @@ class ContactForms(forms.ModelForm):
         ),
         label='E-mail'
     )
+    description = forms.CharField(
+        widget=forms.Textarea(
+            attrs={
+                    'placeholder': '...'
+            }
+        ),
+        label='Descrição'
+    )
+
 
     class Meta:
         model = Contact
